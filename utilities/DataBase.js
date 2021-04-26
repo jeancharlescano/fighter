@@ -11,17 +11,26 @@ export const pool = new Pool({
 
 pool.connect();
 
+export async function findAll() {
+  return await pool
+    .query(`SELECT * FROM player;`)
+    .then((res) => {
+      // console.log(res.rows[0]);
+      return res.rows
+    })
+    .catch((error) => console.error(error.stack));
+}
+
 export async function findById(id) {
-  await pool
+  return await pool
     .query(`SELECT * FROM player WHERE id = ${id};`)
     .then((res) => console.log(res.rows[0]))
     .catch((error) => console.error(error.stack));
 }
 
 export async function UpdatePlayer(id, level) {
-  await pool
+  return await pool
     .query(`UPDATE player SET level = ${level} WHERE id = ${id};`)
     .then((res) => console.log(res.command))
     .catch((error) => console.error(error.stack));
 }
-
