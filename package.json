@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jeancharlescano/fighter/issues"
   },
-  "homepage": "https://github.com/jeancharlescano/fighter#readme"
+  "homepage": "https://github.com/jeancharlescano/fighter#readme",
+  "dependencies": {
+    "pg": "^8.6.0"
+  }
 }
